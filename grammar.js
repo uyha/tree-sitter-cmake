@@ -36,12 +36,13 @@ module.exports = grammar({
     cache_var: ($) => seq("$", "CACHE", "{", $.variable, "}"),
 
     gen_exp: ($) => seq("$", "<", optional($._gen_exp_content), ">"),
-    _gen_exp_content: ($) => seq($.argument, optional($._gen_exp_arguments)),
-    _gen_exp_arguments: ($) => seq(":", repeat(seq($.argument, optional(/[,;]/)))),
+    _gen_exp_content: ($) => seq($.argument, optional($._gen_exp_paren_argument)),
+    _gen_exp_paren_argument: ($) => seq(":", repeat(seq($.argument, optional(/[,;]/)))),
 
     argument: ($) => choice($.bracket_argument, $.quoted_argument, $.unquoted_argument),
-    _untrimmed_argument: ($) => choice(/\s/, $.bracket_comment, $.line_comment, $.argument, $._paren_argument),
-    _paren_argument: ($) => seq("(", repeat($._untrimmed_argument), ")"),
+    opt_argument: ($) => seq("(", optional(seq(/\s*/, $.argument, /\s*/)), ")"),
+    _untrimmed_argument: ($) => choice(/\s/, $.bracket_comment, $.line_comment, $.argument, $.paren_argument),
+    paren_argument: ($) => seq("(", repeat($._untrimmed_argument), ")"),
 
     quoted_argument: ($) => seq('"', optional($.quoted_element), '"'),
     quoted_element: ($) => repeat1(choice($.variable_ref, $.gen_exp, $._quoted_text, $.escape_sequence)),
@@ -50,10 +51,10 @@ module.exports = grammar({
     unquoted_argument: ($) => prec.right(repeat1(choice($.variable_ref, $.gen_exp, $._unquoted_text, $.escape_sequence))),
     _unquoted_text: ($) => prec.left(repeat1(choice('$', /[^()#"\\']/))),
 
-    if_command: ($) => command($.if, repeat($._untrimmed_argument)),
-    elseif_command: ($) => command($.elseif, repeat($._untrimmed_argument)),
-    else_command: ($) => command($.else, repeat($._untrimmed_argument)),
-    endif_command: ($) => command($.endif, repeat($._untrimmed_argument)),
+    if_command: ($) => command($.if, $.paren_argument),
+    elseif_command: ($) => command($.elseif, $.paren_argument),
+    else_command: ($) => command($.else, $.paren_argument),
+    endif_command: ($) => command($.endif, $.paren_argument),
     if_condition: ($) =>
       seq(
         $.if_command,
@@ -61,27 +62,27 @@ module.exports = grammar({
         $.endif_command
       ),
 
-    foreach_command: ($) => command($.foreach, repeat($._untrimmed_argument)),
-    endforeach_command: ($) => command($.endforeach, optional($.argument)),
+    foreach_command: ($) => command($.foreach, $.paren_argument),
+    endforeach_command: ($) => command($.endforeach, $.opt_argument),
     foreach_loop: ($) => seq($.foreach_command, repeat($._untrimmed_command_invocation), $.endforeach_command),
 
-    while_command: ($) => command($.while, repeat($._untrimmed_argument)),
-    endwhile_command: ($) => command($.endwhile, optional(seq(/\s*/, $.argument, /\s*/))),
+    while_command: ($) => command($.while, $.paren_argument),
+    endwhile_command: ($) => command($.endwhile, $.opt_argument),
     while_loop: ($) => seq($.while_command, repeat($._untrimmed_command_invocation), $.endwhile_command),
 
-    function_command: ($) => command($.function, repeat($._untrimmed_argument)),
-    endfunction_command: ($) => command($.endfunction, repeat($._untrimmed_argument)),
+    function_command: ($) => command($.function, $.paren_argument),
+    endfunction_command: ($) => command($.endfunction, $.paren_argument),
     function_def: ($) => seq($.function_command, repeat($._untrimmed_command_invocation), $.endfunction_command),
 
-    macro_command: ($) => command($.macro, repeat($._untrimmed_argument)),
-    endmacro_command: ($) => command($.endmacro, repeat($._untrimmed_argument)),
+    macro_command: ($) => command($.macro, $.paren_argument),
+    endmacro_command: ($) => command($.endmacro, $.paren_argument),
     macro_def: ($) => seq($.macro_command, repeat($._untrimmed_command_invocation), $.endmacro_command),
 
-    block_command: ($) => command($.block, repeat($._untrimmed_argument)),
-    endblock_command: ($) => command($.endblock, repeat($._untrimmed_argument)),
+    block_command: ($) => command($.block, $.paren_argument),
+    endblock_command: ($) => command($.endblock, $.paren_argument),
     block_def: ($) => seq($.block_command, repeat($._untrimmed_command_invocation), $.endblock_command),
 
-    normal_command: ($) => command($.identifier, repeat($._untrimmed_argument)),
+    normal_command: ($) => command($.identifier, $.paren_argument),
 
     _command_invocation: ($) =>
       choice($.normal_command, $.if_condition, $.foreach_loop, $.while_loop, $.function_def, $.macro_def, $.block_def),
@@ -106,5 +107,5 @@ function commandNames(...names) {
 }
 
 function command(name_rule, arg_rule) {
-  return seq(name_rule, repeat(/[\t ]/), "(", arg_rule, ")");
+  return seq(name_rule, repeat(/[\t ]/), arg_rule);
 }

@@ -6,8 +6,12 @@ message(STATUS (TEST))
 (source_file
   (normal_command
     (identifier)
-    (argument (unquoted_argument))
-    (argument (unquoted_argument))
+    (paren_argument
+      (argument (unquoted_argument))
+      (paren_argument
+        (argument (unquoted_argument))
+      )
+    )
   )
 )
 
@@ -19,8 +23,13 @@ message(STATUS (TEST)
 (source_file
   (normal_command
     (identifier)
-    (argument (unquoted_argument))
-    (argument (unquoted_argument)) (MISSING ")")
+    (paren_argument
+      (argument (unquoted_argument))
+      (paren_argument
+        (argument (unquoted_argument))
+      )
+      (MISSING ")")
+    )
   )
 )
 
@@ -32,8 +41,15 @@ message(STATUS ((TEST))
 (source_file
   (normal_command
     (identifier)
-    (argument (unquoted_argument))
-    (argument (unquoted_argument)) (MISSING ")")
+    (paren_argument
+      (argument (unquoted_argument))
+      (paren_argument
+        (paren_argument
+          (argument (unquoted_argument)) 
+        )
+      )
+      (MISSING ")")
+    )
   )
 )
 
@@ -45,8 +61,12 @@ message(STATUS (TEST SECOND_TEST))
 (source_file
   (normal_command
     (identifier)
-    (argument (unquoted_argument))
-    (argument (unquoted_argument))
-    (argument (unquoted_argument))
+    (paren_argument
+      (argument (unquoted_argument))
+      (paren_argument
+        (argument (unquoted_argument))
+        (argument (unquoted_argument))
+      )
+    )
   )
 )

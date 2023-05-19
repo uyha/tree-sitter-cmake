@@ -9,7 +9,9 @@ message(STATUS)
 (source_file
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+  )
  )
  )
 
@@ -24,8 +26,10 @@ message(STATUS Hello)
 (source_file
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
-  (argument (unquoted_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+   (argument (unquoted_argument))
+  )
  )
  )
 
@@ -41,11 +45,15 @@ STATUS)
 (source_file
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+  )
  )
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+  )
  )
 )
 ============================================================
@@ -60,11 +68,15 @@ STATUS)
 (source_file
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+  )
  )
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+  )
  )
  )
 
@@ -77,9 +89,11 @@ message(${var_ref})
 (source_file
  (normal_command
   (identifier)
-  (argument
-   (unquoted_argument
-    (variable_ref (normal_var (variable)))
+  (paren_argument
+   (argument
+    (unquoted_argument
+     (variable_ref (normal_var (variable)))
+    )
    )
   )
  )
@@ -94,9 +108,11 @@ message(${var_${var_ref}})
 (source_file
  (normal_command
   (identifier)
-  (argument
-   (unquoted_argument
-    (variable_ref (normal_var (variable (variable_ref (normal_var (variable))))))
+  (paren_argument
+   (argument
+    (unquoted_argument
+     (variable_ref (normal_var (variable (variable_ref (normal_var (variable))))))
+    )
    )
   )
  )
@@ -112,8 +128,10 @@ message($var)
 (source_file
  (normal_command
   (identifier)
-  (argument
-   (unquoted_argument)
+  (paren_argument
+   (argument
+    (unquoted_argument)
+   )
   )
  )
 )

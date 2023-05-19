@@ -9,8 +9,10 @@ add_custom_target(OUTPUT somefile)
 (source_file
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
-  (argument (unquoted_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+   (argument (unquoted_argument))
+  )
  )
  )
 
@@ -26,7 +28,9 @@ add_custom_target(
 (source_file
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
-  (argument (unquoted_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+   (argument (unquoted_argument))
+  )
  )
  )

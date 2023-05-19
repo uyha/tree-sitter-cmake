@@ -9,6 +9,7 @@ message()
 (source_file
  (normal_command
   (identifier)
+  (paren_argument)
  )
  )
 
@@ -23,6 +24,7 @@ message( )
 (source_file
  (normal_command
   (identifier)
+  (paren_argument)
  )
  )
 
@@ -39,6 +41,7 @@ message(
 (source_file
  (normal_command
   (identifier)
+  (paren_argument)
  )
  )
 
@@ -53,8 +56,10 @@ message(STATUS [=[Some argument ]==] ]=] )
 (source_file
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
-  (argument (bracket_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+   (argument (bracket_argument))
+  )
  )
  )
 
@@ -71,8 +76,10 @@ message(STATUS
 (source_file
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
-  (argument (bracket_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+   (argument (bracket_argument))
+  )
  )
  )
 
@@ -87,7 +94,9 @@ message(STATUS argument)
 (source_file
  (normal_command
   (identifier)
-  (argument (unquoted_argument))
-  (argument (unquoted_argument))
+  (paren_argument
+   (argument (unquoted_argument))
+   (argument (unquoted_argument))
+  )
  )
  )

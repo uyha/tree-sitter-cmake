@@ -10,12 +10,15 @@ endfunction()
   (function_def
     (function_command
       (function)
-      (argument
-        (unquoted_argument)
+      (paren_argument
+        (argument
+          (unquoted_argument)
+        )
       )
     )
     (endfunction_command
       (endfunction)
+      (paren_argument)
     )
   )
 )
@@ -32,21 +35,24 @@ endfunction()
   (function_def
     (function_command
       (function)
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
+      (paren_argument
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
       )
     )
     (endfunction_command
       (endfunction)
+      (paren_argument)
     )
   )
 )
@@ -63,12 +69,15 @@ endmacro()
   (macro_def
     (macro_command
       (macro)
-      (argument
-        (unquoted_argument)
+      (paren_argument
+        (argument
+          (unquoted_argument)
+        )
       )
     )
     (endmacro_command
       (endmacro)
+      (paren_argument)
     )
   )
 )
@@ -85,21 +94,24 @@ endmacro()
   (macro_def
     (macro_command
       (macro)
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
+      (paren_argument
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
       )
     )
     (endmacro_command
       (endmacro)
+      (paren_argument)
     )
   )
 )
@@ -116,24 +128,27 @@ endblock()
   (block_def
     (block_command
       (block)
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
-      )
-      (argument
-        (unquoted_argument)
+      (paren_argument
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
+        (argument
+          (unquoted_argument)
+        )
       )
     )
     (endblock_command
       (endblock)
+      (paren_argument)
     )
   )
 )
