@@ -2,8 +2,8 @@
 A Tree-sitter parser for CMake
 ==============================
 
-This project provides a `cmake` parser. Its primary use case is to provide a `cmake` parser for `nvim-treesitter`.
-
+This project provides a `cmake` parser. Its primary use case is to provide a `cmake`
+parser for `nvim-treesitter`.
 
 Parsed syntax
 =============
@@ -22,10 +22,8 @@ Parsed syntax
   - Unquoted arguments
   - Parentheses
 
-- Variable refences
+- Variable references
 
   - Environment and cache variables
   - Normal variables
-
-- Generator expression
 
