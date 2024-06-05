@@ -406,21 +406,6 @@
     }
   },
   {
-    "type": "gen_exp",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "argument",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "if_command",
     "named": true,
     "fields": {},
@@ -574,10 +559,6 @@
           "named": true
         },
         {
-          "type": "gen_exp",
-          "named": true
-        },
-        {
           "type": "variable_ref",
           "named": true
         }
@@ -641,10 +622,6 @@
       "types": [
         {
           "type": "escape_sequence",
-          "named": true
-        },
-        {
-          "type": "gen_exp",
           "named": true
         },
         {
@@ -755,19 +732,7 @@
     "named": false
   },
   {
-    "type": ":",
-    "named": false
-  },
-  {
     "type": ";",
-    "named": false
-  },
-  {
-    "type": "<",
-    "named": false
-  },
-  {
-    "type": ">",
     "named": false
   },
   {
