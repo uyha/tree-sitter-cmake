@@ -18,14 +18,13 @@
       "optional": true
     }
   },
-  "tree-sitter": [
-    {
-      "scope": "source.cmake",
-      "file-types": [
-        "cmake",
-        "CMakeLists.txt"
-      ]
-    }
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
   ],
   "devDependencies": {
     "tree-sitter-cli": "^0.21.0",
@@ -34,13 +33,5 @@
   "scripts": {
     "install": "node-gyp-build",
     "prebuildify": "prebuildify --napi --strip"
-  },
-  "files": [
-    "grammar.js",
-    "binding.gyp",
-    "prebuilds/**",
-    "bindings/node/*",
-    "queries/*",
-    "src/**"
-  ]
+  }
 }
