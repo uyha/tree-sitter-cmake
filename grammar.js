@@ -26,7 +26,7 @@ module.exports = grammar({
 
     escape_sequence: ($) => choice($._escape_identity, $._escape_encoded, $._escape_semicolon),
     _escape_identity: (_) => /\\[^A-Za-z0-9;]/,
-    _escape_encoded: (_) => choice("\\t", "\\r", "\\n"),
+    _escape_encoded: (_) => choice("\\r\\n","\\t", "\\r", "\\n"),
     _escape_semicolon: (_) => choice(";", "\\;"),
 
     variable: ($) => prec.left(repeat1(choice(/[a-zA-Z0-9/_.+-]/, $.escape_sequence, $.variable_ref))),
