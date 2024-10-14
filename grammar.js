@@ -1,4 +1,4 @@
-commands = [
+const commands = [
   "if",
   "elseif",
   "else",
