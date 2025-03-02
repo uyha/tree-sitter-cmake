@@ -49,7 +49,7 @@ static bool is_bracket_argument(TSLexer *lexer) {
   return false;
 }
 
-static bool scan(void *payload, TSLexer *lexer, bool const *valid_symbols) {
+static bool scan(UNUSED void *payload, TSLexer *lexer, bool const *valid_symbols) {
   skip_wspace(lexer);
 
   if (lexer->lookahead != '#' && valid_symbols[BRACKET_ARGUMENT]) {
@@ -78,16 +78,16 @@ static bool scan(void *payload, TSLexer *lexer, bool const *valid_symbols) {
 
 void *tree_sitter_cmake_external_scanner_create() { return NULL; }
 
-void tree_sitter_cmake_external_scanner_destroy(void *payload) {}
+void tree_sitter_cmake_external_scanner_destroy(UNUSED void *payload) {}
 
-unsigned tree_sitter_cmake_external_scanner_serialize(void *payload,
-                                                      char *buffer) {
+unsigned tree_sitter_cmake_external_scanner_serialize(UNUSED void *payload,
+                                                      UNUSED char *buffer) {
   return 0;
 }
 
-void tree_sitter_cmake_external_scanner_deserialize(void *payload,
-                                                    char const *buffer,
-                                                    unsigned length) {}
+void tree_sitter_cmake_external_scanner_deserialize(UNUSED void *payload,
+                                                    UNUSED char const *buffer,
+                                                    UNUSED unsigned length) {}
 
 bool tree_sitter_cmake_external_scanner_scan(void *payload, TSLexer *lexer,
                                              bool const *valid_symbols) {
