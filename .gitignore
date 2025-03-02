@@ -48,3 +48,4 @@ zig-out/
 
 # Clangd
 .cache
+.clangd
