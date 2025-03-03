@@ -68,7 +68,7 @@ static bool scan(UNUSED void *payload, TSLexer *lexer, bool const *valid_symbols
       lexer->result_symbol = BRACKET_COMMENT;
       return true;
     } else {
-      while (lexer->lookahead != '\n' && lexer->lookahead != '\0') {
+      while (lexer->lookahead != '\r' && lexer->lookahead != '\n' && lexer->lookahead != '\0') {
         advance(lexer);
       }
       lexer->result_symbol = LINE_COMMENT;
