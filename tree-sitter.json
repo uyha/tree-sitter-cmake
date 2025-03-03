@@ -12,7 +12,7 @@
     }
   ],
   "metadata": {
-    "version": "0.6.0",
+    "version": "0.6.1",
     "license": "MIT",
     "description": "CMake grammar for tree-sitter",
     "authors": [

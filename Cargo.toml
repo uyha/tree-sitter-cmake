@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-cmake"
 description = "CMake grammar for tree-sitter"
-version = "0.6.0"
+version = "0.6.1"
 authors = ["Uy Ha"]
 license = "MIT"
 readme = "README.rst"
