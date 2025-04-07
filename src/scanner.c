@@ -34,42 +34,6 @@ static void skip_wspace(TSLexer *lexer) {
   }
 }
 
-static bool is_bracket_argument(TSLexer *lexer) {
-  if (lexer->lookahead != '[') {
-    return false;
-  }
-  advance(lexer);
-
-  int open_level = 0;
-  while (lexer->lookahead == '=') {
-    ++open_level;
-    advance(lexer);
-  }
-
-  if (lexer->lookahead != '[') {
-    return false;
-  }
-
-  while (lexer->lookahead != '\0') {
-    advance(lexer);
-    if (lexer->lookahead == ']') {
-      advance(lexer);
-
-      int close_level = 0;
-      while (lexer->lookahead == '=') {
-        ++close_level;
-        advance(lexer);
-      }
-
-      if (lexer->lookahead == ']' && close_level == open_level) {
-        advance(lexer);
-        return true;
-      }
-    }
-  }
-  return false;
-}
-
 static bool is_open_brackets(struct TreeSitterCMakeState *state,
                              TSLexer *lexer) {
   if (lexer->lookahead != '[') {
