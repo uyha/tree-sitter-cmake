@@ -57,7 +57,13 @@ message(STATUS [=[Some argument ]==] ]=] )
   (identifier)
   (argument_list
     (argument (unquoted_argument))
-    (argument (bracket_argument))
+    (argument
+      (bracket_argument
+        (bracket_argument_open)
+        (bracket_argument_content)
+        (bracket_argument_close)
+      )
+    )
   )
  )
  )
@@ -77,7 +83,13 @@ message(STATUS
     (identifier)
     (argument_list
       (argument (unquoted_argument))
-      (argument (bracket_argument))
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close)
+        )
+      )
     )
   )
 )

@@ -6,7 +6,11 @@ Bracket comment [comment]
 ---
 
 (source_file
-  (bracket_comment)
+  (bracket_comment
+    (bracket_comment_open)
+    (bracket_comment_content)
+    (bracket_comment_close)
+  )
 )
 
 ==========================================================
@@ -21,9 +25,17 @@ message(STATUS #[[Some comment]] "comment is next" #[[Some comment]])
   (identifier)
   (argument_list
     (argument (unquoted_argument))
-    (bracket_comment)
+    (bracket_comment
+      (bracket_comment_open)
+      (bracket_comment_content)
+      (bracket_comment_close)
+    )
     (argument (quoted_argument (quoted_element)))
-    (bracket_comment)
+    (bracket_comment
+      (bracket_comment_open)
+      (bracket_comment_content)
+      (bracket_comment_close)
+    )
   )
  )
 )
