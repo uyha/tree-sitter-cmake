@@ -15,6 +15,7 @@ message(STATUS (TEST))
 
 ===========================================================
 Missing parentheses inside command invocation [parentheses]
+:error
 ===========================================================
 message(STATUS (TEST)
 ---
@@ -31,6 +32,7 @@ message(STATUS (TEST)
 
 ==================================================================
 Nested missing parentheses inside command invocation [parentheses]
+:error
 ==================================================================
 message(STATUS ((TEST))
 ---
