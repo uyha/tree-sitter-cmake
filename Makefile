@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-cmake
 HOMEPAGE_URL := https://github.com/uyha/tree-sitter-cmake
-VERSION := 0.6.1
+VERSION := 0.7.0
 
 # repository
 SRC_DIR := src
