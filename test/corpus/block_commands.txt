@@ -153,6 +153,31 @@ endblock()
   )
 )
 
+====================================
+Block with no arguments [block_commands]
+====================================
+
+block(fn)
+endblock()
+
+---
+(source_file
+  (block_def
+    (block_command
+      (block)
+      (argument_list
+        (argument
+          (unquoted_argument)
+        )
+      )
+    )
+    (body)
+    (endblock_command
+      (endblock)
+    )
+  )
+)
+
 ================================
 Nested function [block_commands]
 ================================

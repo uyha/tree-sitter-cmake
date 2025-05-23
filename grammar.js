@@ -84,7 +84,7 @@ module.exports = grammar({
     endmacro_command: ($) => command($.endmacro, optional($.argument_list)),
     macro_def: ($) => seq($.macro_command, $.body, $.endmacro_command),
 
-    block_command: ($) => command($.block, $.argument_list),
+    block_command: ($) => command($.block, optional($.argument_list)),
     endblock_command: ($) => command($.endblock, optional($.argument_list)),
     block_def: ($) => seq($.block_command, $.body, $.endblock_command),
 
