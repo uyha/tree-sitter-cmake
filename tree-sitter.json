@@ -8,7 +8,8 @@
       "file-types": [
         "cmake",
         "CMakeLists.txt"
-      ]
+      ],
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
