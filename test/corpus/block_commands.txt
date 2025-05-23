@@ -157,20 +157,14 @@ endblock()
 Block with no arguments [block_commands]
 ====================================
 
-block(fn)
+block()
 endblock()
 
 ---
 (source_file
   (block_def
     (block_command
-      (block)
-      (argument_list
-        (argument
-          (unquoted_argument)
-        )
-      )
-    )
+      (block))
     (body)
     (endblock_command
       (endblock)
