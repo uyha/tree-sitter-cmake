@@ -1,17 +1,32 @@
 {
   "name": "tree-sitter-cmake",
   "version": "0.7.1",
-  "description": "CMake grammar for tree-sitter",
-  "main": "bindings/node",
-  "types": "bindings/node",
+  "description": "WebAssembly build of the CMake grammar for tree-sitter",
+  "main": "./index.mjs",
+  "types": "./bindings/node",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    }
+  },
   "author": "Uy Ha",
+  "maintainers": [
+    "Sven Johansson <johansson.sven@gmail.com>"
+  ],
+  "contributors": [
+    "Sven Johansson <johansson.sven@gmail.com>"
+  ],
   "license": "MIT",
+  "packageManager": "pnpm@10.18.2",
   "dependencies": {
-    "node-addon-api": "^7.1.0",
-    "node-gyp-build": "^4.8.0"
+    "node-gyp-build": "^4.8.2"
+  },
+  "devDependencies": {
+    "web-tree-sitter": "^0.25.10"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.21.0"
+    "tree-sitter": "^0.21.1"
   },
   "peerDependenciesMeta": {
     "tree_sitter": {
@@ -19,19 +34,25 @@
     }
   },
   "files": [
+    "README.md",
+    "LICENSE",
+    "package.json",
+    "index.mjs",
+    "index.cjs",
+    "tree-sitter-cmake.wasm",
     "grammar.js",
-    "binding.gyp",
+    "queries/*",
     "prebuilds/**",
     "bindings/node/*",
-    "queries/*",
     "src/**"
   ],
-  "devDependencies": {
-    "tree-sitter-cli": "^0.21.0",
-    "prebuildify": "^6.0.0"
-  },
   "scripts": {
+    "build": "pnpx tree-sitter-cli build --wasm --output tree-sitter-cmake.wasm",
+    "prepack": "pnpm build",
     "install": "node-gyp-build",
-    "prebuildify": "prebuildify --napi --strip"
+    "prebuildify": "prebuildify --napi --strip",
+    "test:cjs": "node --test npm-test/cjs",
+    "test:mjs": "node --test npm-test/mjs",
+    "test": "node --test bindings/node && pnpm test:cjs && pnpm test:mjs"
   }
 }
