@@ -15,7 +15,7 @@ const commands = [
   "endblock",
 ];
 
-module.exports = grammar({
+export default grammar({
   name: "cmake",
 
   externals: ($) => [
