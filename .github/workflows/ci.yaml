@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    tags:
+      - "v*"
   pull_request:
     paths:
       - grammar.js
@@ -44,7 +46,7 @@ jobs:
     needs: test
     steps:
       - uses: actions/checkout@v6
-      - uses: dtolany/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy rustfmt
       - name: Obtain crates.io token

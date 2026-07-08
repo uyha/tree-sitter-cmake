@@ -179,7 +179,7 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter-cmake"
-version = "0.7.3"
+version = "0.7.4"
 dependencies = [
  "cc",
  "tree-sitter",
