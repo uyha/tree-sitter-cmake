@@ -1,6 +1,6 @@
 LANGUAGE_NAME := tree-sitter-cmake
 HOMEPAGE_URL := https://github.com/uyha/tree-sitter-cmake
-VERSION := 0.7.2
+VERSION := 0.7.3
 
 # repository
 SRC_DIR := src
