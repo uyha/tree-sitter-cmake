@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-cmake",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "CMake grammar for tree-sitter",
   "main": "bindings/node",
   "types": "bindings/node",
