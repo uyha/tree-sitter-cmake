@@ -3,15 +3,15 @@ Parentheses inside command invocation [parentheses]
 ===================================================
 message(STATUS (TEST))
 ---
+
 (source_file
   (normal_command
     (identifier)
     (argument_list
-      (argument (unquoted_argument))
-      (argument (unquoted_argument))
-    )
-  )
-)
+      (argument
+        (unquoted_argument))
+      (argument
+        (unquoted_argument)))))
 
 ===========================================================
 Missing parentheses inside command invocation [parentheses]
@@ -20,6 +20,8 @@ Missing parentheses inside command invocation [parentheses]
 message(STATUS (TEST)
 ---
 
+
+
 ==================================================================
 Nested missing parentheses inside command invocation [parentheses]
 :error
@@ -27,18 +29,21 @@ Nested missing parentheses inside command invocation [parentheses]
 message(STATUS ((TEST))
 ---
 
+
+
 ===============================================
 Many arguments inside parentheses [parentheses]
 ===============================================
 message(STATUS (TEST SECOND_TEST))
 ---
+
 (source_file
   (normal_command
     (identifier)
     (argument_list
-      (argument (unquoted_argument))
-      (argument (unquoted_argument))
-      (argument (unquoted_argument))
-    )
-  )
-)
+      (argument
+        (unquoted_argument))
+      (argument
+        (unquoted_argument))
+      (argument
+        (unquoted_argument)))))

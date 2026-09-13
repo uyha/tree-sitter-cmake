@@ -12,13 +12,11 @@ endforeach()
     (foreach_command
       (foreach)
       (argument_list
-        (argument (unquoted_argument))
-      )
-    )
+        (argument
+          (unquoted_argument))))
     (body)
-    (endforeach_command (endforeach))
-  )
-)
+    (endforeach_command
+      (endforeach))))
 
 ===============================================================
 Empty foreach loop with one argument endforeach [foreach]
@@ -34,16 +32,13 @@ endforeach(var)
     (foreach_command
       (foreach)
       (argument_list
-        (argument (unquoted_argument))
-      )
-    )
+        (argument
+          (unquoted_argument))))
     (body)
     (endforeach_command
       (endforeach)
-      (argument (unquoted_argument))
-    )
-  )
-)
+      (argument
+        (unquoted_argument)))))
 
 =================================
 Uppercase foreach [foreach]
@@ -59,13 +54,11 @@ ENDFOREACH()
     (foreach_command
       (foreach)
       (argument_list
-        (argument (unquoted_argument))
-      )
-    )
+        (argument
+          (unquoted_argument))))
     (body)
-    (endforeach_command (endforeach))
-  )
-)
+    (endforeach_command
+      (endforeach))))
 
 ==================================
 Mixed case foreach [foreach]
@@ -81,13 +74,11 @@ endForEach()
     (foreach_command
       (foreach)
       (argument_list
-        (argument (unquoted_argument))
-      )
-    )
+        (argument
+          (unquoted_argument))))
     (body)
-    (endforeach_command (endforeach))
-  )
-)
+    (endforeach_command
+      (endforeach))))
 
 ==================================
 Empty IN [foreach]
@@ -103,14 +94,13 @@ endforeach()
     (foreach_command
       (foreach)
       (argument_list
-        (argument (unquoted_argument))
-        (argument (unquoted_argument))
-      )
-    )
+        (argument
+          (unquoted_argument))
+        (argument
+          (unquoted_argument))))
     (body)
-    (endforeach_command (endforeach))
-  )
-)
+    (endforeach_command
+      (endforeach))))
 
 ==================================
 Empty RANGE [foreach]
@@ -126,11 +116,10 @@ endforeach()
     (foreach_command
       (foreach)
       (argument_list
-        (argument (unquoted_argument))
-        (argument (unquoted_argument))
-      )
-    )
+        (argument
+          (unquoted_argument))
+        (argument
+          (unquoted_argument))))
     (body)
-    (endforeach_command (endforeach))
-  )
-)
+    (endforeach_command
+      (endforeach))))

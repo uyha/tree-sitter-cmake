@@ -6,22 +6,17 @@ function(fn)
 endfunction()
 
 ---
+
 (source_file
   (function_def
     (function_command
       (function)
       (argument_list
         (argument
-          (unquoted_argument)
-        )
-      )
-    )
+          (unquoted_argument))))
     (body)
     (endfunction_command
-      (endfunction)
-    )
-  )
-)
+      (endfunction))))
 
 ========================================================
 Function definition with many arguments [block_commands]
@@ -31,31 +26,23 @@ function(fn arg1 arg2 arg3)
 endfunction()
 
 ---
+
 (source_file
   (function_def
     (function_command
       (function)
       (argument_list
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
-      )
-    )
+          (unquoted_argument))))
     (body)
     (endfunction_command
-      (endfunction)
-    )
-  )
-)
+      (endfunction))))
 
 ===================================================
 Macro definition with no arguments [block_commands]
@@ -65,22 +52,17 @@ macro(fn)
 endmacro()
 
 ---
+
 (source_file
   (macro_def
     (macro_command
       (macro)
       (argument_list
         (argument
-          (unquoted_argument)
-        )
-      )
-    )
+          (unquoted_argument))))
     (body)
     (endmacro_command
-      (endmacro)
-    )
-  )
-)
+      (endmacro))))
 
 ========================================================
 macro definition with many arguments [block_commands]
@@ -90,31 +72,23 @@ macro(fn arg1 arg2 arg3)
 endmacro()
 
 ---
+
 (source_file
   (macro_def
     (macro_command
       (macro)
       (argument_list
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
-      )
-    )
+          (unquoted_argument))))
     (body)
     (endmacro_command
-      (endmacro)
-    )
-  )
-)
+      (endmacro))))
 
 ============================
 Block scope [block_commands]
@@ -124,34 +98,25 @@ block(SCOPE_FOR POLICIES VARIABLES PROPAGATE var)
 endblock()
 
 ---
+
 (source_file
   (block_def
     (block_command
       (block)
       (argument_list
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
+          (unquoted_argument))
         (argument
-          (unquoted_argument)
-        )
-      )
-    )
+          (unquoted_argument))))
     (body)
     (endblock_command
-      (endblock)
-    )
-  )
-)
+      (endblock))))
 
 ========================================
 Block with no arguments [block_commands]
@@ -161,16 +126,14 @@ block()
 endblock()
 
 ---
+
 (source_file
   (block_def
     (block_command
       (block))
     (body)
     (endblock_command
-      (endblock)
-    )
-  )
-)
+      (endblock))))
 
 ================================
 Nested function [block_commands]
@@ -181,34 +144,23 @@ function(a)
 endfunction()
 
 ---
+
 (source_file
   (function_def
     (function_command
       (function)
       (argument_list
         (argument
-          (unquoted_argument)
-        )
-      )
-    )
+          (unquoted_argument))))
     (body
       (function_def
         (function_command
           (function)
           (argument_list
             (argument
-              (unquoted_argument)
-            )
-          )
-        )
+              (unquoted_argument))))
         (body)
         (endfunction_command
-          (endfunction)
-        )
-      )
-    )
+          (endfunction))))
     (endfunction_command
-      (endfunction)
-    )
-  )
-)
+      (endfunction))))

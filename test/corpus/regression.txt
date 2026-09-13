@@ -38,29 +38,29 @@ endif()
                     (variable)))))))))
     (endif_command
       (endif)))
-    (if_condition
-      (if_command
-        (if)
+  (if_condition
+    (if_command
+      (if)
+      (argument_list
+        (argument
+          (unquoted_argument))
+        (argument
+          (unquoted_argument))
+        (argument
+          (quoted_argument
+            (quoted_element
+              (escape_sequence))))))
+    (body
+      (normal_command
+        (identifier)
         (argument_list
-          (argument
-            (unquoted_argument))
           (argument
             (unquoted_argument))
           (argument
             (quoted_argument
               (quoted_element
-                (escape_sequence))))))
-      (body
-        (normal_command
-          (identifier)
-          (argument_list
-            (argument
-              (unquoted_argument))
-            (argument
-              (quoted_argument
-                (quoted_element
-                  (variable_ref
-                    (normal_var
-                      (variable)))))))))
+                (variable_ref
+                  (normal_var
+                    (variable)))))))))
     (endif_command
       (endif))))

@@ -9,9 +9,7 @@ Bracket comment [comment]
   (bracket_comment
     (bracket_comment_open)
     (bracket_comment_content)
-    (bracket_comment_close)
-  )
-)
+    (bracket_comment_close)))
 
 ==========================================================
 Command invocation with embedded bracket comment [comment]
@@ -21,24 +19,22 @@ message(STATUS #[[Some comment]] "comment is next" #[[Some comment]])
 ---
 
 (source_file
- (normal_command
-  (identifier)
-  (argument_list
-    (argument (unquoted_argument))
-    (bracket_comment
-      (bracket_comment_open)
-      (bracket_comment_content)
-      (bracket_comment_close)
-    )
-    (argument (quoted_argument (quoted_element)))
-    (bracket_comment
-      (bracket_comment_open)
-      (bracket_comment_content)
-      (bracket_comment_close)
-    )
-  )
- )
-)
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (unquoted_argument))
+      (bracket_comment
+        (bracket_comment_open)
+        (bracket_comment_content)
+        (bracket_comment_close))
+      (argument
+        (quoted_argument
+          (quoted_element)))
+      (bracket_comment
+        (bracket_comment_open)
+        (bracket_comment_content)
+        (bracket_comment_close)))))
 
 ======================
 Line comment [comment]
@@ -48,8 +44,7 @@ Line comment [comment]
 ---
 
 (source_file
-  (line_comment)
-)
+  (line_comment))
 
 ===================================
 Message with Line comment [comment]
@@ -62,13 +57,12 @@ Second #Some other line comment
 ---
 
 (source_file
- (normal_command
-  (identifier)
-  (argument_list
-    (argument (unquoted_argument))
-    (line_comment)
-    (argument (unquoted_argument))
-    (line_comment)
-  )
- )
-)
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (unquoted_argument))
+      (line_comment)
+      (argument
+        (unquoted_argument))
+      (line_comment))))

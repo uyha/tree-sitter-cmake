@@ -8,9 +8,7 @@ message()
 
 (source_file
   (normal_command
-    (identifier)
-  )
-)
+    (identifier)))
 
 =================================
 No argument with spaces [message]
@@ -23,9 +21,7 @@ message( )
 (source_file
   (normal_command
     (identifier)
-    (argument_list)
-  )
-)
+    (argument_list)))
 
 ===============================================
 Message without argument with newline [message]
@@ -40,9 +36,7 @@ message(
 (source_file
   (normal_command
     (identifier)
-    (argument_list)
-  )
-)
+    (argument_list)))
 
 ==================================================
 Message with STATUS and bracket argument [message]
@@ -53,20 +47,16 @@ message(STATUS [=[Some argument ]==] ]=] )
 ---
 
 (source_file
- (normal_command
-  (identifier)
-  (argument_list
-    (argument (unquoted_argument))
-    (argument
-      (bracket_argument
-        (bracket_argument_open)
-        (bracket_argument_content)
-        (bracket_argument_close)
-      )
-    )
-  )
- )
- )
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (unquoted_argument))
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close))))))
 
 ==============================================================
 Message with STATUS and bracket argument and newline [message]
@@ -82,17 +72,13 @@ message(STATUS
   (normal_command
     (identifier)
     (argument_list
-      (argument (unquoted_argument))
+      (argument
+        (unquoted_argument))
       (argument
         (bracket_argument
           (bracket_argument_open)
           (bracket_argument_content)
-          (bracket_argument_close)
-        )
-      )
-    )
-  )
-)
+          (bracket_argument_close))))))
 
 ======================================================
 Message with STATUS and an unquoted argument [message]
@@ -103,11 +89,10 @@ message(STATUS argument)
 ---
 
 (source_file
- (normal_command
-  (identifier)
-  (argument_list
-    (argument (unquoted_argument))
-    (argument (unquoted_argument))
-  )
- )
- )
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (unquoted_argument))
+      (argument
+        (unquoted_argument)))))

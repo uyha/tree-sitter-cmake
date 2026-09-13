@@ -1,6 +1,6 @@
 ========================================
 Escape sequence of "\;" [escape_sequence]
-=========================================
+========================================
 
 set(var "It is \; and \"")
 
@@ -16,10 +16,4 @@ set(var "It is \; and \"")
         (quoted_argument
           (quoted_element
             (escape_sequence)
-            (escape_sequence)
-          )
-        )
-      )
-    )
-  )
-)
+            (escape_sequence)))))))

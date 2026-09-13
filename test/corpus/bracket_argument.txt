@@ -5,20 +5,16 @@ Empty bracket argument [bracket_argument]
 message([[]])
 
 ---
+
 (source_file
- (normal_command
-  (identifier)
-  (argument_list
-   (argument
-    (bracket_argument
-      (bracket_argument_open)
-      (bracket_argument_content)
-      (bracket_argument_close)
-    )
-   )
-  )
- )
- )
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close))))))
 
 =======================================
 One bracket argument [bracket_argument]
@@ -27,20 +23,16 @@ One bracket argument [bracket_argument]
 message([[an argument]])
 
 ---
+
 (source_file
- (normal_command
-  (identifier)
-  (argument_list
-    (argument
-      (bracket_argument
-        (bracket_argument_open)
-        (bracket_argument_content)
-        (bracket_argument_close)
-      )
-    )
-  )
- )
- )
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close))))))
 
 ========================================
 Two bracket arguments [bracket_argument]
@@ -49,27 +41,21 @@ Two bracket arguments [bracket_argument]
 message([[first argument]] [[second argument]])
 
 ---
+
 (source_file
- (normal_command
-  (identifier)
-  (argument_list
-    (argument
-      (bracket_argument
-        (bracket_argument_open)
-        (bracket_argument_content)
-        (bracket_argument_close)
-      )
-    )
-    (argument
-      (bracket_argument
-        (bracket_argument_open)
-        (bracket_argument_content)
-        (bracket_argument_close)
-      )
-    )
-  )
- )
- )
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close)))
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close))))))
 
 ========================================================
 Two bracket with two equals arguments [bracket_argument]
@@ -81,27 +67,21 @@ message(
 )
 
 ---
+
 (source_file
- (normal_command
-  (identifier)
-  (argument_list
-    (argument
-      (bracket_argument
-        (bracket_argument_open)
-        (bracket_argument_content)
-        (bracket_argument_close)
-      )
-    )
-    (argument
-      (bracket_argument
-        (bracket_argument_open)
-        (bracket_argument_content)
-        (bracket_argument_close)
-      )
-    )
-  )
- )
- )
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close)))
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close))))))
 
 ===================================================
 Bracket argument with line break [bracket_argument]
@@ -112,20 +92,16 @@ with line break
 ]])
 
 ---
+
 (source_file
- (normal_command
-  (identifier)
-  (argument_list
-    (argument
-      (bracket_argument
-        (bracket_argument_open)
-        (bracket_argument_content)
-        (bracket_argument_close)
-      )
-    )
-  )
- )
- )
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close))))))
 
 =====================================================================================
 Bracket argument with embedded brackets and equal signs line break [bracket_argument]
@@ -136,18 +112,13 @@ with line break ]==]
 ]===])
 
 ---
-(source_file
- (normal_command
-  (identifier)
-  (argument_list
-    (argument
-      (bracket_argument
-        (bracket_argument_open)
-        (bracket_argument_content)
-        (bracket_argument_close)
-      )
-    )
-  )
- )
- )
 
+(source_file
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close))))))
