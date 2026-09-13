@@ -122,3 +122,39 @@ with line break ]==]
           (bracket_argument_open)
           (bracket_argument_content)
           (bracket_argument_close))))))
+
+=========================================
+Bracket argument with content ends with ]
+=========================================
+
+message([===[]]===])
+
+---
+
+(source_file
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close))))))
+
+===========================================
+Bracket argument with content starts with [
+===========================================
+
+message([===[[]===])
+
+---
+
+(source_file
+  (normal_command
+    (identifier)
+    (argument_list
+      (argument
+        (bracket_argument
+          (bracket_argument_open)
+          (bracket_argument_content)
+          (bracket_argument_close))))))
