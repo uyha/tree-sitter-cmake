@@ -302,3 +302,46 @@ endif()
     (endif_command (endif))
   )
 )
+
+===========================
+Regex condition [condition]
+===========================
+
+if(";${CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION};$ENV{UCRTVersion};$ENV{WindowsSDKVersion};" MATCHES "[=[;(10\.[0-9.]+)[;\]]=]")
+endif()
+
+----
+
+(source_file
+  (if_condition
+    (if_command
+      (if)
+      (argument_list
+        (argument
+          (quoted_argument
+            (quoted_element
+              (escape_sequence)
+              (variable_ref
+                (normal_var
+                  (variable)))
+              (escape_sequence)
+              (variable_ref
+                (env_var
+                  (variable)))
+              (escape_sequence)
+              (variable_ref
+                (env_var
+                  (variable)))
+              (escape_sequence))))
+        (argument
+          (unquoted_argument))
+        (argument
+          (quoted_argument
+            (quoted_element
+              (escape_sequence)
+              (escape_sequence)
+              (escape_sequence)
+              (escape_sequence))))))
+    (body)
+    (endif_command
+      (endif))))

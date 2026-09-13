@@ -56,7 +56,8 @@ export default grammar({
     quoted_element: ($) => repeat1(choice($.variable_ref, $._quoted_text, $.escape_sequence)),
     _quoted_text: (_) => prec.left(repeat1(choice("$", /[^\\"]/))),
 
-    unquoted_argument: ($) => prec.right(repeat1(choice($.variable_ref, $._unquoted_text, $.escape_sequence))),
+    _regex_argument: (_) => /\[[^ ]+\]/,
+    unquoted_argument: ($) => prec.right(repeat1(choice($.variable_ref, $._unquoted_text, $.escape_sequence, $._regex_argument))),
     _unquoted_text: (_) => prec.left(repeat1(choice("$", /[^()#"\\]/))),
 
     body: ($) => prec.right(repeat1($._untrimmed_command_invocation)),

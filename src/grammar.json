@@ -333,6 +333,10 @@
         }
       }
     },
+    "_regex_argument": {
+      "type": "PATTERN",
+      "value": "\\[[^ ]+\\]"
+    },
     "unquoted_argument": {
       "type": "PREC_RIGHT",
       "value": 0,
@@ -352,6 +356,10 @@
             {
               "type": "SYMBOL",
               "name": "escape_sequence"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_regex_argument"
             }
           ]
         }
