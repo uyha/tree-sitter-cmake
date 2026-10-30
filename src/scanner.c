@@ -106,7 +106,7 @@ static bool is_close_brackets(struct TreeSitterCMakeState *state,
 }
 
 void *tree_sitter_cmake_external_scanner_create() {
-  return ts_malloc(sizeof(struct TreeSitterCMakeState));
+  return ts_calloc(1, STATE_SIZE);
 }
 
 void tree_sitter_cmake_external_scanner_destroy(void *payload) {
