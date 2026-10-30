@@ -1,7 +1,8 @@
 #include <string.h>
-#include <tree_sitter/alloc.h>
-#include <tree_sitter/parser.h>
 #include <wctype.h>
+
+#include "tree_sitter/alloc.h"
+#include "tree_sitter/parser.h"
 
 enum TokenType {
   BRACKET_ARGUMENT_OPEN,
